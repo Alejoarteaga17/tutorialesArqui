@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +28,8 @@ SECRET_KEY = 'django-insecure-y7o7i@pza5#$dng(t@x2%jr8u-6^r^!4q_3v)4ws!q2ghhwmw@
 DEBUG = True
 
 ALLOWED_HOSTS = []
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Application definition
@@ -121,3 +125,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+IMAGE_STORAGE_CLASS = 'pages.utils.ImageLocalStorage'
